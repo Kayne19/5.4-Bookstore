@@ -1,22 +1,25 @@
 extends ../layout
 
 block content
-    a(href= `/books/add`) Add Book
     h3 Books
     table
         thead
             tr
-                th Title
-                th Author
+                th Book Title
+                th Author(s)
                 th Publisher
                 th Genre
-                th Pages
+                th Number of Pages
+                th Cover Image
+                th Description
+                th
         tbody
             each book in books
                 tr
                     td= book.title
-                    td= book.author
+                    td= book.authors
                     td= book.publisher
-                    td= book.pages
-                    td
-                        a(href=`/books/profile/${book.id}`) View Book
+                    td= book.genre
+                    td= book.pages_num
+                    td= book.cover_image
+                    td= book.description
